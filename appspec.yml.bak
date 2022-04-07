@@ -1,0 +1,8 @@
+version: 0.0
+Resources:
+  - HelloWorldFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "HelloWorldFunction"
+        Alias: "HelloWorldFunctionAlias"
+        CurrentVersion: "1"        
