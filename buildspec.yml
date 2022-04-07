@@ -5,7 +5,7 @@ phases:
       - sam package --template-file template.yaml --output-template-file package.yaml --s3-bucket samtestpackage-testlambda-app
   post_build:
     commands:
-      - sam deploy --template-file package.yaml --stack-name DemoPipelineStack --capabilities CAPABILITY_IAM --confirm-changeset= true
+      - sam deploy --template-file package.yaml --stack-name DemoPipelineStack --capabilities CAPABILITY_IAM --confirm-changeset true
   
 artifacts:
   type: zip
