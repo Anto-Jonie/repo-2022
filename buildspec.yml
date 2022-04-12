@@ -2,11 +2,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - sam package --template-file template.yaml --output-template-file package.yaml --s3-bucket samtestpackage-testlambda-app
-  post_build:
-    commands:
-      - sam deploy --template-file package.yaml --stack-name DemoPipelineStack --capabilities CAPABILITY_IAM --no-confirm-changeset true
-  
+      - aws cloudformation package --template-file template.yaml --s3-bucket samtestpackage-testlambda-app --output-template-file package.yaml
+    
 artifacts:
   type: zip
   files:
